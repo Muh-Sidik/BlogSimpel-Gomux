@@ -1,4 +1,4 @@
-package utils
+package controllers
 
 import (
 	"fmt"
@@ -8,6 +8,9 @@ import (
 	"github.com/Muh-Sidik/BlogSimpel-Gomux/api/models"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
+
+	_ "github.com/jinzhu/gorm/dialects/mysql" //mysql database driver
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 type Server struct {

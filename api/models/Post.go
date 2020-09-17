@@ -86,7 +86,7 @@ func (p *Post) AllPosts(db *gorm.DB) (*[]Post, error) {
 	return &posts, nil
 }
 
-func (p *Post) PostById(db *gorm.DB, pid uint32) (*Post, error) {
+func (p *Post) PostById(db *gorm.DB, pid uint64) (*Post, error) {
 	var err error
 
 	err = db.Debug().Model(&Post{}).Where("id = ?", pid).Take(&p).Error
@@ -125,7 +125,7 @@ func (p *Post) UpdatePost(db *gorm.DB) (*Post, error) {
 	return p, nil
 }
 
-func (p *Post) DeletePost(db *gorm.DB, uid, pid uint32) (int64, error) {
+func (p *Post) DeletePost(db *gorm.DB, uid uint32, pid uint64) (int64, error) {
 
 	db = db.Debug().Model(&Post{}).Where("id = ? AND author_id = ?", pid, uid).Take(&Post{}).Delete(&Post{})
 
