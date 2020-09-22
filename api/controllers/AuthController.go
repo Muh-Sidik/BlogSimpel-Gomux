@@ -67,5 +67,5 @@ func (server *Server) FindUser(email, password string) (string, error) {
 		return "", err
 	}
 
-	auth.CreateToken(user.ID)
+	return auth.CreateToken(user.ID)
 }

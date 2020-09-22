@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/Muh-Sidik/BlogSimpel-Gomux/api"
 )
 
 func main() {
-	fmt.Println("Hei")
+	api.Run()
 }

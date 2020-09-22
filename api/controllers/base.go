@@ -53,6 +53,6 @@ func (server *Server) Initialize(dbDriver, dbUser, dbPassword, dbPort, dbHost, d
 }
 
 func (server *Server) Run(address string) {
-	fmt.Println("Listening to port 8001")
+	fmt.Println("Listening to port ", address)
 	log.Fatal(http.ListenAndServe(address, server.Router))
 }
